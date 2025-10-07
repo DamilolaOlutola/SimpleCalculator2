@@ -1,0 +1,24 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.SimpleCalculator2" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+    <!-- Inside <resources> in themes.xml -->
+    <!-- Style for standard (number, C, .) buttons (Vibrant Purple) -->
+    <style name="CalculatorButton" parent="Widget.AppCompat.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">90dp</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:layout_margin">1dp</item>
+        <item name="android:backgroundTint">#673AB7</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <!-- Style for operators (+, -, *, /) -->
+    <style name="CalculatorOperatorButton" parent="CalculatorButton">
+        <item name="android:backgroundTint">#5E35B1</item>
+    </style>
+
+    <style name="Theme.SimpleCalculator2" parent="Base.Theme.SimpleCalculator2" />
+</resources>

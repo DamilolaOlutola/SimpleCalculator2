@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="0dp"
+    android:background="#FFFFFF"
+    tools:context=".MainActivity">
+
+    <!-- Calculator Display -->
+    <TextView
+        android:id="@+id/tvDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#F0F0F0"
+        android:gravity="bottom|end"
+        android:padding="24dp"
+        android:text="0"
+        android:textSize="80sp"
+        android:textColor="#333333"
+        android:maxLines="1"
+        android:ellipsize="start"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Button Grid (using a table for simplicity) -->
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*">
+
+        <!-- Row 1: 1, 2, 3, Plus -->
+        <TableRow>
+            <Button style="@style/CalculatorButton" android:text="1" android:onClick="onDigit" />
+            <Button style="@style/CalculatorButton" android:text="2" android:onClick="onDigit" />
+            <Button style="@style/CalculatorButton" android:text="3" android:onClick="onDigit" />
+            <Button style="@style/CalculatorOperatorButton" android:id="@+id/btn_add" android:text="+" android:onClick="onOperator" />
+        </TableRow>
+
+        <!-- Row 2: 4, 5, 6, Minus -->
+        <TableRow>
+            <Button style="@style/CalculatorButton" android:text="4" android:onClick="onDigit" />
+            <Button style="@style/CalculatorButton" android:text="5" android:onClick="onDigit" />
+            <Button style="@style/CalculatorButton" android:text="6" android:onClick="onDigit" />
+            <Button style="@style/CalculatorOperatorButton" android:id="@+id/btn_subtract" android:text="-" android:onClick="onOperator" />
+        </TableRow>
+
+        <!-- Row 3: 7, 8, 9, Multiply -->
+        <TableRow>
+            <Button style="@style/CalculatorButton" android:text="7" android:onClick="onDigit" />
+            <Button style="@style/CalculatorButton" android:text="8" android:onClick="onDigit" />
+            <Button style="@style/CalculatorButton" android:text="9" android:onClick="onDigit" />
+            <Button style="@style/CalculatorOperatorButton" android:id="@+id/btn_multiply" android:text="*" android:onClick="onOperator" />
+        </TableRow>
+
+        <!-- Row 4: Clear, 0, Decimal, Divide -->
+        <TableRow>
+            <Button style="@style/CalculatorButton" android:id="@+id/btn_clear" android:text="C" android:onClick="onClear" />
+            <Button style="@style/CalculatorButton" android:text="0" android:onClick="onDigit" />
+            <Button style="@style/CalculatorButton" android:id="@+id/btn_dot" android:text="." android:onClick="onDecimalPoint" />
+            <Button style="@style/CalculatorOperatorButton" android:id="@+id/btn_divide" android:text="/" android:onClick="onOperator" />
+        </TableRow>
+
+        <!-- Row 5: Equals (Spanning all 4 columns) -->
+        <TableRow>
+            <Button
+                style="@style/CalculatorButton"
+                android:id="@+id/btn_equals"
+                android:text="="
+                android:onClick="onEqual"
+                android:backgroundTint="#9C27B0"
+                android:layout_span="4" />
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>
